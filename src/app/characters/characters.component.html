@@ -1,0 +1,18 @@
+<div *ngFor="let data of response; let i=index">
+    <div class="data">
+      <div *ngIf="!!data.image " (click)="navigateToCharacter(i, data)"><img [src]="data.image" target="_blank" rel="noopener" /></div>
+      <div class="data2">
+        <h1 *ngIf="!!data.name " class="data-layer">{{data.name }}</h1>
+        <ul class="data-layer">
+            <li> <h3><span *ngIf="!!data.status " >{{data.status}}-</span>{{data.species}}</h3></li>
+        </ul>
+       
+        <div class="data-layer text">Last known location:</div>
+        <div class="data-detail">{{data.location.name}}</div>
+        <div class="data-layer text">First seen in:</div>
+        <div class="data-detail">{{data.origin.name}}</div>
+      </div>
+  
+    </div>
+  
+  </div>
